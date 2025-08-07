@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Server Connection Test</title>
+</head>
+<body>
+    <h1>Testing Server Connection</h1>
+    <div id="status">Testing...</div>
+    <div id="templates"></div>
+    
+    <script>
+        // Test server connection
+        fetch('http://localhost:8002/health')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerHTML = 
+                    '<span style="color: green;">✅ Server is running!</span><br>' +
+                    '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            })
+            .catch(error => {
+                document.getElementById('status').innerHTML = 
+                    '<span style="color: red;">❌ Cannot connect to server</span><br>' +
+                    'Error: ' + error.message;
+            });
+            
+        // Test templates endpoint
+        fetch('http://localhost:8002/templates')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('templates').innerHTML = 
+                    '<h2>Available Templates:</h2>' +
+                    '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            })
+            .catch(error => console.error('Templates error:', error));
+    </script>
+</body>
+</html>

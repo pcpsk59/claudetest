@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎨 Flux Kontext Max - Standalone Demo</title>
+    <meta charset="UTF-8">
+    <style>
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0; padding: 20px; min-height: 100vh;
+        }
+        .container { 
+            max-width: 800px; margin: 0 auto; 
+            background: white; border-radius: 20px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white; padding: 30px; text-align: center;
+        }
+        .header h1 { margin: 0; font-size: 2.5rem; }
+        .content { padding: 30px; }
+        
+        .demo-section {
+            background: #f8f9fa; padding: 20px; border-radius: 15px; margin: 20px 0;
+        }
+        
+        .template-showcase {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px; margin: 20px 0;
+        }
+        .template-card {
+            border: 2px solid #e9ecef; border-radius: 10px; padding: 20px; text-align: center;
+            background: white; transition: all 0.3s ease;
+        }
+        .template-card:hover { border-color: #667eea; background: #f0f8ff; }
+        
+        .feature-list {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px; margin: 20px 0;
+        }
+        .feature-item {
+            background: white; padding: 20px; border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .status-box {
+            background: #fff3cd; border: 1px solid #ffeaa7; 
+            padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; padding: 15px 30px; border: none; border-radius: 25px;
+            font-size: 16px; font-weight: bold; cursor: pointer; 
+            text-decoration: none; display: inline-block; margin: 10px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3); }
+        
+        code { background: #f8f9fa; padding: 2px 8px; border-radius: 4px; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Flux Kontext Max</h1>
+            <p>Professional Image-to-Image Generation Demo</p>
+        </div>
+        
+        <div class="content">
+            <div class="status-box">
+                <h3>📱 Quick Setup Instructions</h3>
+                <p>To run the full application:</p>
+                <ol style="text-align: left; display: inline-block;">
+                    <li>Open Command Prompt/Terminal</li>
+                    <li>Navigate to: <code>C:\Users\del19\OneDrive\Documents\proj\claudetest\comfyapp-dev\phase1-mvp\backend</code></li>
+                    <li>Run: <code>python start_server.py</code></li>
+                    <li>Open: <code>http://localhost:8002</code></li>
+                    <li>Add your Black Forest Labs API key</li>
+                </ol>
+            </div>
+            
+            <div class="demo-section">
+                <h2>🎯 What This App Does</h2>
+                <p>Transform your images using <strong>Flux Kontext Max</strong> - the latest state-of-the-art image-to-image AI model. Upload any photo and apply professional-quality transformations using our dynamic prompting system.</p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <h4>🎭 Dynamic Prompting</h4>
+                        <p>Master templates with random variations ensure unique, professional results every time</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>☁️ Cloud Processing</h4>
+                        <p>Uses Black Forest Labs API - no local GPU or storage needed</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🎨 Professional Quality</h4>
+                        <p>Flux Kontext Max delivers commercial-grade image transformations</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🚀 Production Ready</h4>
+                        <p>Built with FastAPI, modern UI, and scalable architecture</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="demo-section">
+                <h2>🎭 Available Master Templates</h2>
+                <p>Each template creates unique variations with professional prompting:</p>
+                
+                <div class="template-showcase">
+                    <div class="template-card">
+                        <h4>📸 Studio Lighting</h4>
+                        <p>Professional commercial photography setup with softbox lighting and clean backgrounds</p>
+                    </div>
+                    <div class="template-card">
+                        <h4>🌅 Natural Balcony</h4>
+                        <p>Outdoor lifestyle portraits with city backdrops and golden hour lighting</p>
+                    </div>
+                    <div class="template-card">
+                        <h4>🎬 Dramatic Mood</h4>
+                        <p>Cinematic chiaroscuro lighting with strong contrast and artistic composition</p>
+                    </div>
+                    <div class="template-card">
+                        <h4>☕ Casual Lifestyle</h4>
+                        <p>Authentic social media ready shots in comfortable, aspirational settings</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="demo-section">
+                <h2>🔧 Technical Features</h2>
+                <ul style="text-align: left;">
+                    <li><strong>Flux Kontext Max Integration:</strong> Latest AI model for superior quality</li>
+                    <li><strong>Impact Pack Style Prompting:</strong> Wildcard-like dynamic prompt generation</li>
+                    <li><strong>Subject-Aware Processing:</strong> Prompts adapt to your image content</li>
+                    <li><strong>Themed Consistency:</strong> Professional templates ensure coherent results</li>
+                    <li><strong>Cloud-First Architecture:</strong> No local resources required</li>
+                    <li><strong>Production UI:</strong> Modern, responsive, mobile-ready interface</li>
+                </ul>
+            </div>
+            
+            <div class="demo-section">
+                <h2>💡 Usage Examples</h2>
+                <p><strong>Subject:</strong> "professional woman in business attire"</p>
+                <p><strong>Template:</strong> Studio Lighting</p>
+                <p><strong>Generated Prompt:</strong> "professional woman in business attire, professional studio lighting setup, softbox lighting, key light and fill light, clean white background, commercial photography style, high-end fashion shoot aesthetic, dramatic shadows, perfect exposure, cinematic quality, 8k resolution"</p>
+                
+                <p style="margin-top: 20px;"><strong>Custom Elements:</strong> "warm tones, soft focus, vintage aesthetic"</p>
+                <p><strong>Result:</strong> Professional portrait with vintage warmth and soft focus effects</p>
+            </div>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="#" class="btn" onclick="startServer()">🚀 Start Full Application</a>
+                <a href="#" class="btn" onclick="showInstructions()" style="background: #28a745;">📖 Setup Guide</a>
+            </div>
+            
+            <div id="instructions" style="display: none;" class="status-box">
+                <h3>🛠️ Setup Instructions</h3>
+                <div style="text-align: left;">
+                    <h4>1. Get Black Forest Labs API Key:</h4>
+                    <ul>
+                        <li>Visit: <a href="https://api.bfl.ml" target="_blank">https://api.bfl.ml</a></li>
+                        <li>Sign up for an account</li>
+                        <li>Generate your API key</li>
+                    </ul>
+                    
+                    <h4>2. Start the Server:</h4>
+                    <ul>
+                        <li>Open Command Prompt as Administrator</li>
+                        <li>Navigate to: <code>C:\Users\del19\OneDrive\Documents\proj\claudetest\comfyapp-dev\phase1-mvp\backend</code></li>
+                        <li>Run: <code>python start_server.py</code></li>
+                        <li>Keep the terminal window open</li>
+                    </ul>
+                    
+                    <h4>3. Use the Application:</h4>
+                    <ul>
+                        <li>Open browser: <code>http://localhost:8002</code></li>
+                        <li>Enter your API key</li>
+                        <li>Upload an image and start generating!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showInstructions() {
+            const instructions = document.getElementById('instructions');
+            instructions.style.display = instructions.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function startServer() {
+            alert('Please follow the setup instructions to start the server manually. The full application will run on http://localhost:8002');
+        }
+    </script>
+</body>
+</html>
