@@ -1,0 +1,16 @@
+# PASD Processing Results Analysis
+==================================================
+Total images found: 9
+
+[VALID]    Set14/baboon
+[INVALID]  Set14/barbara
+[VALID]    Set14/bridge
+[VALID]    Set5/baby
+[VALID]    Set5/bird
+[VALID]    Set5/butterfly
+[VALID]    Set5/head
+[INVALID]  Set5/LQ_sample
+[INVALID]  Set5/woman
+
+Valid: 6, Invalid: 3
+Success Rate: 66.7%
